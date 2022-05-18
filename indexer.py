@@ -9,6 +9,8 @@ if __name__ == '__main__':
 
     indexer = pt.DFIndexer("./indexes/default", overwrite=True)
     index_ref = indexer.index(docs_df["text"], docs_df["docno"])
+    index = pt.IndexFactory.of(index_ref)
+    pt.BatchRetrieve(index, num_results=10, wmodel=)
     print(index_ref.toString())
     index = pt.IndexFactory.of(index_ref)
     a = 2
