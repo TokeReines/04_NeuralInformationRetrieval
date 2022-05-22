@@ -1,6 +1,12 @@
 import pyterrier as pt
 import pandas as pd
 
+# %%
+print("hej")
+
+# %%
+test = a
+
 if __name__ == '__main__':
     pt.init()
     docs_df = pd.read_csv('data/lab_docs.csv', dtype=str)
@@ -10,7 +16,8 @@ if __name__ == '__main__':
     indexer = pt.DFIndexer("./indexes/default", overwrite=True)
     index_ref = indexer.index(docs_df["text"], docs_df["docno"])
     index = pt.IndexFactory.of(index_ref)
-    pt.BatchRetrieve(index, num_results=10, wmodel=)
+    print(index.getDocumentIndex().getDocumentLength(1))
+    pt.BatchRetrieve(index, num_results=10, wmodel='BM25')
     print(index_ref.toString())
     index = pt.IndexFactory.of(index_ref)
     a = 2
