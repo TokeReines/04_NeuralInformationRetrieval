@@ -1,11 +1,6 @@
 import pyterrier as pt
 import pandas as pd
 
-# %%
-print("hej")
-
-# %%
-test = a
 
 if __name__ == '__main__':
     pt.init()
